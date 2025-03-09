@@ -1,0 +1,614 @@
+/* 
+ * 阿里百炼大模型思考记录 - 样式表
+ * 优化版本
+ */
+
+/* 全局变量 */
+:root {
+    --primary-color: #409EFF;
+    --success-color: #67C23A;
+    --warning-color: #E6A23C;
+    --danger-color: #F56C6C;
+    --info-color: #909399;
+    --text-color: #303133;
+    --background-color: #f5f7fa;
+    --border-radius: 4px;
+    --box-shadow: 0 2px 12px 0 rgba(0, 0, 0, 0.1);
+    --transition: all 0.3s ease;
+}
+
+/* 全局样式 */
+body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: var(--background-color);
+    color: var(--text-color);
+    line-height: 1.6;
+}
+
+/* 页眉样式 */
+.el-header {
+    background-color: white;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    padding: 0 20px;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    height: auto !important;
+    min-height: 60px;
+    display: flex;
+    align-items: center;
+}
+
+.header-content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    height: 60px;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+}
+
+.logo i {
+    font-size: 24px;
+    color: var(--primary-color);
+    margin-right: 10px;
+}
+
+.logo h1 {
+    font-size: 18px;
+    font-weight: 600;
+    margin: 0;
+    white-space: nowrap;
+}
+
+.controls {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.last-update {
+    font-size: 12px;
+    color: var(--info-color);
+    white-space: nowrap;
+}
+
+/* 主内容区域 */
+.el-main {
+    padding: 20px;
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+/* 卡片样式 */
+.el-card {
+    margin-bottom: 20px;
+    border-radius: var(--border-radius);
+    transition: var(--transition);
+    box-shadow: var(--box-shadow) !important;
+}
+
+.el-card:hover {
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.15) !important;
+}
+
+.card-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.card-header i {
+    color: var(--primary-color);
+    margin-right: 8px;
+}
+
+/* 表单信息提示 */
+.el-form-item__info {
+    color: #909399;
+    font-size: 12px;
+    margin-top: 5px;
+    line-height: 1.4;
+}
+
+/* 右对齐元素 */
+.text-right {
+    text-align: right;
+}
+
+/* 统计卡片 */
+.stats-row {
+    margin-bottom: 20px;
+}
+
+.stat-card {
+    text-align: center;
+    transition: transform 0.3s ease;
+}
+
+.stat-card:hover {
+    transform: translateY(-5px);
+}
+
+.stat-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.stat-title {
+    font-size: 14px;
+    color: #606266;
+    margin-bottom: 8px;
+}
+
+.stat-value {
+    font-size: 24px;
+    font-weight: 600;
+}
+
+.stat-card.pending .stat-value {
+    color: var(--warning-color);
+}
+
+.stat-card.processing .stat-value {
+    color: var(--info-color);
+}
+
+.stat-card.completed .stat-value {
+    color: var(--success-color);
+}
+
+.stat-card.failed .stat-value {
+    color: var(--danger-color);
+}
+
+/* 表格样式 */
+.el-table {
+    margin-bottom: 15px;
+    border-radius: var(--border-radius);
+    overflow: hidden;
+}
+
+.el-table .el-table__header-wrapper th {
+    background-color: #f5f7fa;
+    color: #606266;
+    font-weight: 500;
+}
+
+.content-cell {
+    max-height: 80px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    cursor: pointer;
+    padding: 5px 0;
+}
+
+.content-cell:hover {
+    color: var(--primary-color);
+}
+
+.truncated-text {
+    max-width: 300px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    cursor: pointer;
+}
+
+.status-column {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.status-column .el-button {
+    padding: 5px;
+    margin-left: 8px;
+}
+
+/* 加载状态 */
+.loading-container {
+    padding: 20px 0;
+}
+
+/* 无数据提示 */
+.no-data {
+    text-align: center;
+    padding: 30px 0;
+    color: #909399;
+}
+
+.no-data i {
+    font-size: 40px;
+    margin-bottom: 10px;
+    display: block;
+}
+
+.no-data p {
+    font-size: 16px;
+    margin: 0;
+}
+
+/* 分页器 */
+.pagination {
+    text-align: center;
+    margin-top: 20px;
+    padding-top: 15px;
+    border-top: 1px solid #eee;
+}
+
+/* 详情对话框 */
+.detail-thinking, .detail-result {
+    margin-bottom: 20px;
+}
+
+.detail-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
+    border-bottom: 1px solid #eee;
+    padding-bottom: 8px;
+}
+
+.detail-header h4 {
+    font-size: 16px;
+    font-weight: 500;
+    margin: 0;
+    display: flex;
+    align-items: center;
+    color: #606266;
+}
+
+.detail-header h4 i {
+    margin-right: 8px;
+    color: var(--primary-color);
+}
+
+.detail-content {
+    background-color: #f9f9f9;
+    padding: 15px;
+    border-radius: var(--border-radius);
+    max-height: 300px;
+    overflow-y: auto;
+    white-space: pre-wrap;
+    word-break: break-word;
+    font-family: monospace;
+    line-height: 1.5;
+    font-size: 14px;
+}
+
+/* 表单样式 */
+.input-card .el-form {
+    margin-top: 10px;
+}
+
+/* 历史记录卡片 */
+.records-card {
+    margin-top: 20px;
+}
+
+/* 响应式布局 */
+@media (max-width: 768px) {
+    .el-header {
+        padding: 0 10px;
+    }
+    
+    .logo h1 {
+        font-size: 16px;
+    }
+    
+    .last-update {
+        display: none;
+    }
+    
+    .el-main {
+        padding: 10px;
+    }
+    
+    .el-table {
+        width: 100% !important;
+        overflow-x: auto;
+    }
+    
+    .el-dialog {
+        width: 90% !important;
+        margin-top: 10vh !important;
+    }
+    
+    .stat-card {
+        margin-bottom: 10px;
+    }
+    
+    .stats-row .el-col {
+        width: 50% !important;
+        flex: 0 0 50% !important;
+    }
+}
+
+/* 动画和过渡 */
+.fade-enter-active, .fade-leave-active {
+    transition: opacity 0.3s;
+}
+.fade-enter, .fade-leave-to {
+    opacity: 0;
+}
+
+/* 滚动条美化 */
+::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+}
+
+::-webkit-scrollbar-track {
+    background: #f1f1f1;
+    border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #c1c1c1;
+    border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #a8a8a8;
+}
+
+/* Markdown内容样式 */
+.markdown-popover {
+    max-width: 600px !important;
+    padding: 16px !important;
+}
+
+.markdown-content {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    line-height: 1.6;
+    color: #2c3e50;
+    overflow-wrap: break-word;
+}
+
+.markdown-content h1,
+.markdown-content h2,
+.markdown-content h3,
+.markdown-content h4,
+.markdown-content h5,
+.markdown-content h6 {
+    margin-top: 24px;
+    margin-bottom: 16px;
+    font-weight: 600;
+    line-height: 1.25;
+}
+
+.markdown-content h1 { font-size: 2em; }
+.markdown-content h2 { font-size: 1.5em; }
+.markdown-content h3 { font-size: 1.25em; }
+.markdown-content h4 { font-size: 1em; }
+.markdown-content h5 { font-size: 0.875em; }
+.markdown-content h6 { font-size: 0.85em; }
+
+.markdown-content p {
+    margin-top: 0;
+    margin-bottom: 16px;
+}
+
+.markdown-content code {
+    padding: 0.2em 0.4em;
+    margin: 0;
+    font-size: 85%;
+    background-color: rgba(27, 31, 35, 0.05);
+    border-radius: 3px;
+    font-family: "SFMono-Regular", Consolas, "Liberation Mono", Menlo, Courier, monospace;
+}
+
+.markdown-content pre {
+    padding: 16px;
+    overflow: auto;
+    font-size: 85%;
+    line-height: 1.45;
+    background-color: #f6f8fa;
+    border-radius: 3px;
+    margin-bottom: 16px;
+}
+
+.markdown-content pre code {
+    padding: 0;
+    margin: 0;
+    font-size: 100%;
+    word-break: normal;
+    white-space: pre;
+    background: transparent;
+    border: 0;
+}
+
+.markdown-content blockquote {
+    padding: 0 1em;
+    color: #6a737d;
+    border-left: 0.25em solid #dfe2e5;
+    margin: 0 0 16px 0;
+}
+
+.markdown-content ul,
+.markdown-content ol {
+    padding-left: 2em;
+    margin-top: 0;
+    margin-bottom: 16px;
+}
+
+.markdown-content table {
+    border-spacing: 0;
+    border-collapse: collapse;
+    margin-bottom: 16px;
+    width: 100%;
+}
+
+.markdown-content table th,
+.markdown-content table td {
+    padding: 6px 13px;
+    border: 1px solid #dfe2e5;
+}
+
+.markdown-content table tr {
+    background-color: #fff;
+    border-top: 1px solid #c6cbd1;
+}
+
+.markdown-content table tr:nth-child(2n) {
+    background-color: #f6f8fa;
+}
+
+.markdown-content img {
+    max-width: 100%;
+    box-sizing: content-box;
+    background-color: #fff;
+}
+
+.markdown-content hr {
+    height: 0.25em;
+    padding: 0;
+    margin: 24px 0;
+    background-color: #e1e4e8;
+    border: 0;
+}
+
+.markdown-content a {
+    color: #0366d6;
+    text-decoration: none;
+}
+
+.markdown-content a:hover {
+    text-decoration: underline;
+}
+
+/* 代码高亮主题 */
+.hljs {
+    display: block;
+    overflow-x: auto;
+    padding: 0.5em;
+    color: #333;
+    background: #f8f8f8;
+}
+
+.hljs-comment,
+.hljs-quote {
+    color: #998;
+    font-style: italic;
+}
+
+.hljs-keyword,
+.hljs-selector-tag,
+.hljs-subst {
+    color: #333;
+    font-weight: bold;
+}
+
+.hljs-number,
+.hljs-literal,
+.hljs-variable,
+.hljs-template-variable,
+.hljs-tag .hljs-attr {
+    color: #008080;
+}
+
+.hljs-string,
+.hljs-doctag {
+    color: #d14;
+}
+
+.hljs-title,
+.hljs-section,
+.hljs-selector-id {
+    color: #900;
+    font-weight: bold;
+}
+
+.hljs-subst {
+    font-weight: normal;
+}
+
+.hljs-type,
+.hljs-class .hljs-title {
+    color: #458;
+    font-weight: bold;
+}
+
+.hljs-tag,
+.hljs-name,
+.hljs-attribute {
+    color: #000080;
+    font-weight: normal;
+}
+
+.hljs-regexp,
+.hljs-link {
+    color: #009926;
+}
+
+.hljs-symbol,
+.hljs-bullet {
+    color: #990073;
+}
+
+.hljs-built_in,
+.hljs-builtin-name {
+    color: #0086b3;
+}
+
+.hljs-meta {
+    color: #999;
+    font-weight: bold;
+}
+
+.hljs-deletion {
+    background: #fdd;
+}
+
+.hljs-addition {
+    background: #dfd;
+}
+
+.hljs-emphasis {
+    font-style: italic;
+}
+
+.hljs-strong {
+    font-weight: bold;
+}
+
+/* Markdown预览区域 */
+.markdown-preview {
+    border: 1px solid #dcdfe6;
+    border-radius: 4px;
+    padding: 15px;
+    min-height: 222px; /* 与输入框高度保持一致：8行文本 + padding */
+    max-height: 500px;
+    overflow-y: auto;
+    background-color: #fff;
+}
+
+.markdown-preview:empty::before {
+    content: '暂无内容';
+    color: #909399;
+    font-style: italic;
+}
+
+/* 输入区域和预览区域的响应式布局 */
+@media (max-width: 768px) {
+    .el-row .el-col {
+        width: 100% !important;
+    }
+    
+    .markdown-preview {
+        margin-top: 15px;
+        min-height: 150px;
+    }
+} 
